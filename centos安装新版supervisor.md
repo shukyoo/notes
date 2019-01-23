@@ -8,13 +8,17 @@
 ```
 
 ## 配置和启动
+```
 #echo_supervisord_conf > /etc/supervisord.conf
 #supervisord -c /etc/supervisord.conf
+```
 
 
 ## 使用
+```
 supervisorctl status
 supervisorctl start xxx
 supervisorctl stop xxx
 supervisorctl restart xxx:*
 supervisorctl restart all
+```
