@@ -1,11 +1,13 @@
-方法1：
+## 方法1：
 某些已编译好的.so文件直接复制过去就可以使用的
 
 
-方法2：
+## 方法2：
 编译
+```
 $ cd xxxxxx
 $ /path/to/php7/phpize
 $ ./configure --with-php-config=/path/to/php7/php-config/
 $ make && make install
+```
 修改配置
