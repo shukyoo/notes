@@ -36,3 +36,7 @@ dir /var/redis/6583/
 ...
 > cluster nodes
 ```
+
+
+## 修改配置：需要删除每个实例下生成的节点信息：nodes-6583.conf （dump-6583.rdb不确定要不要删除，数据会丢？）
+
