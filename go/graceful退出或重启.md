@@ -33,3 +33,4 @@
 * [Golang服务器热重启、热升级、热更新](https://www.cnblogs.com/sunsky303/p/9778466.html)
 * [使用 Go 语言实现优雅的服务器重启](https://www.oschina.net/translate/graceful-server-restart-with-go)
 * [无停机优雅重启 Go 程序](https://studygolang.com/articles/14038?fr=sidebar)
+* [Go 语言中实现优雅的停止程序](https://www.oschina.net/translate/golang-graceful-stop)
