@@ -34,3 +34,4 @@
 * [使用 Go 语言实现优雅的服务器重启](https://www.oschina.net/translate/graceful-server-restart-with-go)
 * [无停机优雅重启 Go 程序](https://studygolang.com/articles/14038?fr=sidebar)
 * [Go 语言中实现优雅的停止程序](https://www.oschina.net/translate/golang-graceful-stop)
+* [Go优雅重启Web server示例-讲解版](https://www.jishuwen.com/d/2q6V#tuit)
