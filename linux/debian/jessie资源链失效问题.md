@@ -11,7 +11,6 @@ deb-src http://security.debian.org/ jessie/updates main
 deb http://archive.debian.org/debian jessie-backports main
 deb-src http://archive.debian.org/debian jessie-backports main
 ```
-可能某些链接还是可以使用国内镜像，从观察来看镜像中jessie-backports这个没有了，别的都有，没有测试过
 
 ## apt-get update问题
 出现以下问题：
