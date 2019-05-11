@@ -15,6 +15,11 @@
     * [github.com/fvbock/endless](https://github.com/fvbock/endless)
     * [github.com/jpillora/overseer](https://github.com/jpillora/overseer)
 
+## 其它
+* tableflip
+    * [Graceful upgrades in Go](https://blog.cloudflare.com/graceful-upgrades-in-go/)
+    * [tableflip - github](https://github.com/cloudflare/tableflip)
+
 ## 官方http.server Shutdown原理
 * 首先关闭所有的监听
 * 然后关闭所有的空闲连接
