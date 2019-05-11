@@ -19,6 +19,12 @@
 * tableflip
     * [Graceful upgrades in Go](https://blog.cloudflare.com/graceful-upgrades-in-go/)
     * [tableflip - github](https://github.com/cloudflare/tableflip)
+* teleport
+    * [无停机优雅重启 Go 程序](https://studygolang.com/articles/14038?fr=sidebar)
+    * [teleport grace - github](https://github.com/gravitational/teleport/tree/master/lib/service)
+* daemon & grace
+    * [编写GO的WEB开发框架 (十四): daemon和greaceful](https://my.oschina.net/tim8670/blog/643966)
+    * [godaemon - github](https://github.com/tim1020/godaemon)
 
 ## 官方http.server Shutdown原理
 * 首先关闭所有的监听
