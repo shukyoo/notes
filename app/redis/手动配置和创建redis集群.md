@@ -38,3 +38,7 @@ dir /var/redis_cluster/6180/
 ```
 /usr/local/hikvision/redis-3.2.1/src/redis-trib.rb create --replicas 1 127.0.0.1:6180 127.0.0.1:6181 127.0.0.1:6182 127.0.0.1:6183 127.0.0.1:6184 127.0.0.1:6185
 ```
+
+## 参考
+[Redis集群部署](http://www.mamicode.com/info-detail-1866955.html)
+
