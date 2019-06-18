@@ -10,3 +10,6 @@
 [PHP 不会死 —— 我们如何使用 Golang 来阻止 PHP 走向衰亡](https://zhuanlan.zhihu.com/p/54887350)
 [RoadRunner - github](https://github.com/spiral/roadrunner)
 
+#### 标准和规范
+[PHP PSR 标准规范](https://learnku.com/index.php/docs/psr)
+
