@@ -7,6 +7,7 @@
 * [Goa is a framework for building micro-services and APIs in Go using a unique design-first approach](https://github.com/goadesign/goa)
 * [Gizmo is microservice toolkit from The New York Times](https://github.com/NYTimes/gizmo)
 * [Kite is a framework for developing micro-services in Go](https://github.com/koding/kite)
+* [Go-Chassis is a microservice framework for rapid development of microservices in Go](https://github.com/go-chassis/go-chassis)
 
 ## microservice辅助
 * [leveraging that scale with existing tools is still difficult.Micro is solving this problem](https://micro.mu/)
