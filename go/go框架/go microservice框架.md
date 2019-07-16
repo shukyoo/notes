@@ -2,6 +2,7 @@
 （按star数排序）
 * [Go kit is a programming toolkit for building microservices in Go](https://github.com/go-kit/kit)
 * [Go Micro is a framework for microservice development](https://github.com/micro/go-micro)
+* [Kratos是bilibili开源的一套Go微服务框架，包含大量微服务相关框架及工具](https://github.com/bilibili/kratos)
 * [Twirp is a framework for service-to-service communication emphasizing simplicity and minimalism](https://github.com/twitchtv/twirp)
 * [Goa is a framework for building micro-services and APIs in Go using a unique design-first approach](https://github.com/goadesign/goa)
 * [Gizmo is microservice toolkit from The New York Times](https://github.com/NYTimes/gizmo)
