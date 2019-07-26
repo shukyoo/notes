@@ -61,3 +61,12 @@ yum install libxml2-devel openssl-devel libcurl-devel libmcrypt-devel -y
 ```
 make && make install
 ```
+
+## 配置
+```
+cp php-5.5.38/php.ini-production /usr/local/php/etc/php.ini
+cd /usr/local/php/etc
+cp php-fpm.conf.default php-fpm.conf
+```
+后续再修改php.ini里的时区等
+
