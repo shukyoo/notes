@@ -10,7 +10,7 @@
 
 3. 创建topic
 ```
-./kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor1 --partitions1 --topic mytopic
+./kafka-topics.sh --create --zookeeper 127.0.0.1:2181 --replication-factor 1 --partitions 2 --topic mytopic
 ```
 
 4. 为topic增加partition
