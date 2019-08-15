@@ -97,3 +97,4 @@ class Container
 
 ## 参考
 [Dependency Injection (DI) Container in PHP](https://medium.com/tech-tajawal/dependency-injection-di-container-in-php-a7e5d309ccc6)
+[How to Build Your Own Dependency Injection Container](https://www.sitepoint.com/how-to-build-your-own-dependency-injection-container/)
