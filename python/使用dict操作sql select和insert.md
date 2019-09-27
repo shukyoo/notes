@@ -1,4 +1,12 @@
-## select
+##PyMysql
+```python
+import pymysql
+connection = pymysql.connect(db="test")
+cursor = connection.cursor(pymysql.cursors.DictCursor)
+cursor.execute("SELECT ...")
+```
+
+## MySQLdb select
 ```python
 cursor = conn.cursor(MySQLdb.cursors.DictCursor)  ##结果集成为dictionary
 cursor.execute(select_sql )  # query
@@ -9,7 +17,7 @@ for row in cursor:
     id = row["id"]      # 直接使用key获取
 ```
 
-## insert
+## MySQLdb insert
 ```python
 myDict = {'name':'abc','age':16L}
 insert_table = 'mytable'
