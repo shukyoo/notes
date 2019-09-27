@@ -1,4 +1,4 @@
-##PyMysql
+## PyMysql
 ```python
 import pymysql
 connection = pymysql.connect(db="test")
