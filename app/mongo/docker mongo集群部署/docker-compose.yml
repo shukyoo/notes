@@ -1,0 +1,64 @@
+version: '3'
+
+services:
+
+## Router 这里我们只部一个router，生产的话要部多个，参考mongo架构图
+  router:
+    image: mongo
+    command: mongos --configdb configrs/configsrv:27017
+    ports:
+      - "27017:27017"
+    volumes:
+      - /var/data/mongo/router_db:/data/db
+      - /usr/data/mongo/scripts:/scripts
+    restart:
+      always
+
+## Config Servers 这里我们只部一个config server，生产的话要部多个，参考mongo架构图
+  configsrv:
+    image: mongo
+    command: mongod --oplogSize 1024 --replSet configrs --port 27017 --configsvr
+    volumes:
+      - /usr/data/mongo/configsrv_db:/data/configdb
+      - /usr/data/mongo/scripts:/scripts
+    ports:
+      - "27018:27017"
+    restart:
+      always
+
+## Shards 这里我们只部一个分区，如果布多个分区可以一样处理
+  ## node 01 节点1
+  rs1_node1:
+    image: mongo
+    command: mongod --oplogSize 10240 --replSet rs1 --directoryperdb --port 27017 --shardsvr
+    volumes:
+      - /usr/data/mongo/rs1_node_db1:/data/db
+      - /usr/data/mongo/scripts:/scripts
+    ports:
+      - "27021:27017"
+    restart:
+      always
+
+  ## node 02 节点2
+  rs1_node2:
+    image: mongo
+    command: mongod --oplogSize 10240 --replSet rs1 --directoryperdb --port 27017 --shardsvr
+    volumes:
+      - /usr/data/mongo/rs1_node_db2:/data/db
+      - /usr/data/mongo/scripts:/scripts
+    ports:
+      - "27022:27017"
+    restart:
+      always
+
+  ## arbiter 仲裁者，也可以用奇数个节点，但是从经济层面考虑加入仲裁者，因为当出现偶数个节点的时候mongo无法投票出主节点
+  rs1_arbiter:
+    image: mongo
+    command: mongod --oplogSize 1024 --replSet rs1 --directoryperdb --port 27017 --shardsvr
+    volumes:
+      - /usr/data/mongo/rs1_arbiter_db:/data/db
+      - /usr/data/mongo/scripts:/scripts
+    ports:
+      - "27020:27017"
+    restart:
+      always
