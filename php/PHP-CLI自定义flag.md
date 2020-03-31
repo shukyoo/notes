@@ -4,17 +4,17 @@ $options = getopt("f:hp:");
 var_dump($options);
 ```
 
-test.php -f aaa -h -p test输出
+test.php -f hello -h -p world输出
 ```
 array(3) {
   ["f"]=>
-  string(2) "aa"
+  string(2) "aaa"
   
   ["h"]=>
   bool(false)
   
   ["p"]=>
-  string(2) "vv"
+  string(2) "world"
 }
 ```
 
