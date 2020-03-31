@@ -11,3 +11,7 @@
 ## One-to-Squillions（一对无数）
 如系统日志，一直在产生，这种情况下适合采用parent reference（在每条record中，添加一个反向引用，指向Host）
 
+
+
+# 参考
+* [MongoDB一对多模式的三种设计方案](https://blog.csdn.net/Justinjiang1314/article/details/80771449)
