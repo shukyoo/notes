@@ -1,9 +1,9 @@
 ## 生产环境composer install
 ```
-composer.phar install --no-dev --optimize-autoloader
+composer install --no-dev --optimize-autoloader
 
 // Or when automated deployment is done:
-composer.phar install --no-ansi --no-dev --no-interaction --no-plugins --no-progress --no-scripts --no-suggest --optimize-autoloader
+composer install --no-ansi --no-dev --no-interaction --no-plugins --no-progress --no-scripts --no-suggest --optimize-autoloader
 
 // If your codebase supports it, you could swap out --optimize-autoloader for --classmap-authoritative. 
 ```
