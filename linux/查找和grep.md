@@ -20,3 +20,7 @@ or
 grep 'opened\|closed' /var/log/secure
 ```
 
+## grep查找中划线开头的
+```
+grep -- '-aaa'
+```
