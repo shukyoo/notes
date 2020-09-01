@@ -4,7 +4,7 @@
 ## 安装
 ```
 # yum install python-setuptools
-# easy_install supervisor
+# easy_install supervisor==3.3.3
 ```
 
 ## 配置和启动
