@@ -49,3 +49,7 @@ canal.instance.connectionCharset = UTF-8
 ```
 tail -200 /example/example.log  # 这里的example为示例的instance
 ```
+
+## 参考
+[canal-admin的高可用使用，单机使用，HA使用，阿里的canal的UI界面，管理canal的实例，以及问题](https://blog.csdn.net/weixin_40126236/article/details/100777543)
+
