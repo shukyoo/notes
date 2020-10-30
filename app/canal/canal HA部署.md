@@ -50,6 +50,18 @@ canal.instance.connectionCharset = UTF-8
 tail -200 /example/example.log  # 这里的example为示例的instance
 ```
 
+## 问题
+### 1、启动顺序问题
+首先canal的服务需要去canal-admin上去读取配置文件，所以canal-admin需要先启动，就是要先有UI界面，然后在启动canal服务。注意：canal的服务默认是读取本地的配置，启动时一定要加上loacl这个参数，或者改配置文件的名字。
+
+### 2、元数据问题
+在主配置里面canal.instance.global.spring.xml这个配置如果选择的是:
+* file-instance.xml（一般是单机模式）元数据保存在conf/实例/instance.xml
+* default-instance.xnl (为集群模式) 元数据保存在zookeeper里面/otter/canal/destinations   （需要配置zookeeper地址）
+
+### 3、zookeeper改变
+如果主配置的zookeeper地址改变了，需要修改集群的zookeeper和主配置的canal.zkServers参数，最好同时删除conf目录下的所有实例和zookeeper里面保存的所有实例。最后重启canal-admin，再重启canal服务
+
 ## 参考
-[canal-admin的高可用使用，单机使用，HA使用，阿里的canal的UI界面，管理canal的实例，以及问题](https://blog.csdn.net/weixin_40126236/article/details/100777543)
+* [canal-admin的高可用使用，单机使用，HA使用，阿里的canal的UI界面，管理canal的实例，以及问题](https://blog.csdn.net/weixin_40126236/article/details/100777543)
 
