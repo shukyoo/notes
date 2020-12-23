@@ -1,3 +1,8 @@
+#### 连接
+```
+mongo host:port/database -u user -p password
+```
+
 #### 创建库
 ```
 // 如果库不存在，会创建，但是需要添加了数据后才会看到
