@@ -5,9 +5,9 @@
 ## 方法2：
 编译
 ```
-$ cd xxxxxx
-$ /path/to/php7/phpize
-$ ./configure --with-php-config=/path/to/php7/php-config/
+$ cd xxxxxx （扩展目录）
+$ /path/to/php/bin/phpize  （对应phpize实际路径）
+$ ./configure --with-php-config=/path/to/php/bin/php-config  (对应php-config实际路径) （这一步可能报错，需要安装依赖）
 $ make && make install
 ```
 修改配置
