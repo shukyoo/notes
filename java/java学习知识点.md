@@ -1,8 +1,8 @@
 ## 关键字记录，逐步再了解详细
 * ThreadLocal
 * Synchronized
-* HashMap底层原理
-* nio, aio
+* HashMap 底层原理
+* nio, aio，线程模型
 * Lambda
 * 线程安全
 * aop
@@ -15,6 +15,8 @@
 * Servlet
 * 规范，最佳实践
 * 自动化
+* 反射
+* concurrent
 
 ## JVM
 * 内存结构
