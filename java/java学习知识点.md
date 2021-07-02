@@ -1,6 +1,6 @@
 ## 关键字记录，逐步再了解详细
 * ThreadLocal
-* Synchronized
+* Synchronized, synchronizedCollection
 * HashMap 底层原理
 * nio, aio，线程模型
 * Lambda
@@ -13,10 +13,13 @@
 * 动态代理
 * JWT
 * Servlet
-* 规范，最佳实践
+* 规范，最佳实践，正确姿势
 * 自动化
 * 反射
 * concurrent
+* stream
+* ArrayList, LinkedList
+* CopyOnWriteArrayList, ConcurrentLinkedDeque
 
 ## JVM
 * 内存结构
