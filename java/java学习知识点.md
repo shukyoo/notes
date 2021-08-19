@@ -20,10 +20,14 @@
 * stream
 * ArrayList, LinkedList
 * CopyOnWriteArrayList, ConcurrentLinkedDeque
+* 模块化
+
+## 打包
+* maven
+* gradle
 
 ## JVM
 * 内存结构
-* 
 
 ## 中间件
 * dubbo
@@ -39,6 +43,7 @@
 * ORM: mybatis, hibernate
 * 模板：thymeleaf，velocity, freeMaker
 * 日志: log4j
+* 核心增强：guava
 
 ## 工具
 * jvisual
