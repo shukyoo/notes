@@ -14,4 +14,4 @@
 * OpenShift Service Mesh by Red Hat
 
 ## 参考
-* (一文教你弄懂Service Mesh)[https://blog.csdn.net/qq_34874784/article/details/112308730]
+* [一文教你弄懂Service Mesh](https://blog.csdn.net/qq_34874784/article/details/112308730)
