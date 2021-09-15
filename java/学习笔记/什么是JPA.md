@@ -2,7 +2,8 @@
 JPA是Java Persistence API的简称，中文名Java持久层API，是处理数据持久化的一个接口，规范。    
 JPA的出现有两个原因：
 * 简化现有Java EE和Java SE应用的对象持久化的开发工作；
-* Sun希望整合对ORM技术，实现持久化领域的统一。
+* Sun希望整合对ORM技术，实现持久化领域的统一。    
+
 实现了JPA规范的主要有：
 * Hibernate
 * TopLink
