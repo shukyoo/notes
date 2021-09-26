@@ -40,5 +40,6 @@
 
 9. 删除topic
 ```
-./kafka-run-class.sh kafka.admin.DeleteTopicCommand --topic mytopic --zookeeper 127.0.0.1:2181
+delete.topic.enable要设置为true
+./kafka-topics.sh --delete --zookeeper 127.0.0.1:2181 --topic mytopic
 ```
