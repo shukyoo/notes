@@ -26,29 +26,131 @@ zookeeper: 3台
 #### mysql配置
 开启并设置数据库binlog，设置为row模式（canal对row模式支持较好，支持从指定的binlog的位置读取信息）
 
+#### canal admin部署
+1. 部署参考：[Canal Admin QuickStart](https://github.com/alibaba/canal/wiki/Canal-Admin-QuickStart)
+2. 初始化元数据库
+```
+元数据库在admin包的conf/canal_manager.sql
+> source conf/canal_manager.sql
+```
+3. 配置
+```
+server:
+  port: 8080 // 端口
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+spring.datasource:
+  address: test.mysql:3306  // canal所在数据库
+  database: canal_manager   // 库名
+  username: canal           // 用户名
+  password: canal           // 密码
+  driver-class-name: com.mysql.jdbc.Driver
+  url: jdbc:mysql://${spring.datasource.address}/${spring.datasource.database}?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+  hikari:
+    maximum-pool-size: 30
+    minimum-idle: 1
+
+canal:
+  adminUser: admin  // admin用户
+  adminPasswd: admin  // admin密码
+```
+
 #### canal配置
-1. 两台canal各自所在的机器上修改canal.properties
+1. 下载和解压：访问 [release](https://github.com/alibaba/canal/releases) 页面
+
+2. 配置conf/canal_local.properties
 ```
-canal.zkServers=192.168.207.141:2181,192.168.207.142:2181,192.168.207.143:2181
+# register ip
+canal.register.ip = 10.220.11.11
+
+# canal admin config
+canal.admin.manager = 127.0.0.1:8080
+canal.admin.port = 11110
+canal.admin.user = admin
+canal.admin.passwd = 4ACFE3202A5FF5CF467898FC58AAB1D615029441
+
+# admin auto register
+canal.admin.register.auto = true
+canal.admin.register.cluster = test_canal
 ```
-2. 修改 instance.properties （不同命名的instance）
-```
-canal.instance.mysql.slaveId = 1234 #两台不一样
-# position info
-canal.instance.master.address = 192.168.207.141:3306
-canal.instance.dbUsername = root
-canal.instance.dbPassword = 123456
-# canal.instance.defaultDatabaseName = canal
-canal.instance.connectionCharset = UTF-8
-```
-3 开启
+
+3. 启动
 ```
 ./startup.sh
 ```
+
 4. 查看日志，是否正常启动
 ```
 tail -200 /example/example.log  # 这里的example为示例的instance
 ```
+
+#### admin后台配置
+1. 新建集群
+2. 主要修改配置
+```
+#################################################
+######### 		common argument		#############
+#################################################
+# tcp bind ip
+canal.ip =
+# register ip to zookeeper
+canal.register.ip =
+canal.port = 11111
+canal.metrics.pull.port = 11112
+
+# canal admin config
+canal.admin.manager = 127.0.0.1:8080
+canal.admin.port = 11110
+canal.admin.user = admin
+canal.admin.passwd = 4ACFE3202A5FF5CF467898FC58AAB1D615029441
+
+canal.zkServers = zook1.domain:4180,zook2.domain:4180
+
+# table meta tsdb info
+canal.instance.tsdb.enable = true
+canal.instance.tsdb.dir = ${canal.file.data.dir:../conf}/${canal.instance.destination:}
+
+canal.instance.tsdb.url = jdbc:mysql://test.mysql:3306/canal_tsdb
+canal.instance.tsdb.dbUsername = canal
+canal.instance.tsdb.dbPassword = canal
+
+
+#################################################
+######### 		destinations		#############
+#################################################
+
+canal.instance.tsdb.spring.xml = classpath:spring/tsdb/mysql-tsdb.xml
+
+canal.instance.global.spring.xml = classpath:spring/default-instance.xml
+```
+
+3. 创建instance
+4. instance主要配置
+```
+# enable gtid use true/false
+canal.instance.gtidon=true
+
+# position info
+canal.instance.master.address=master.mysql:3306
+canal.instance.master.journal.name=
+canal.instance.master.position=
+canal.instance.master.timestamp=
+canal.instance.master.gtid=
+
+
+canal.instance.standby.address = slave.mysql:3306
+
+# username/password
+canal.instance.dbUsername=canal
+canal.instance.dbPassword=canal
+
+# table regex
+canal.instance.filter.regex=db1_test\\..*,db2_test\\..*
+```
+
 
 ## 问题
 ### 1、启动顺序问题
