@@ -1,5 +1,5 @@
-## optional的作用
->>> Optional is intended to provide a limited mechanism for library method return types where there needed to be a clear way to represent “no result," and using null for such was overwhelmingly likely to cause errors.
+## Optional的作用
+> Optional is intended to provide a limited mechanism for library method return types where there needed to be a clear way to represent “no result," and using null for such was overwhelmingly likely to cause errors.
 
 1. Optional 是用来作为方法返回值的
 2. Optional 是为了清晰地表达返回值中没有结果的可能性
