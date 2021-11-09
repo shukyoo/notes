@@ -3,6 +3,18 @@
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 ```
 
+## 官方6的源好像删除了，然后阿里的好像也不能用了，使用以下
+```
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://file.kangle.odata.cc/repo/Centos-6.repo
+curl -o /etc/yum.repos.d/epel.repo http://file.kangle.odata.cc/repo/epel-6.repo
+yum clean all
+yum makecache
+```
+
+
+
+-------------------------------------------------------------------------
+
 ## 创建
 ```
 vim CentOS6-Base-aliyun.repo
