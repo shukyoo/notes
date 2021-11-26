@@ -5,3 +5,6 @@
 * https://goproxy.io
 * https://goproxy.cn
 * https://mirrors.aliyun.com/goproxy/
+```
+go env -w GOPROXY=https://goproxy.io,direct
+```
