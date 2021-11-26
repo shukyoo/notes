@@ -33,3 +33,5 @@ go test -v -coverprofile=a.out -test.run="TestA*" # 把测试结果保存在 a.o
 go tool cover -html=./a.out  # 通过浏览器打开, 可以看到覆盖经过的函数
 ```
 
+## 参考
+* [Go Test 单元测试简明教程](https://geektutu.com/post/quick-go-test.html)
