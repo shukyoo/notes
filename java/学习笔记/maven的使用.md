@@ -7,7 +7,6 @@
 * 全部小写，用中划线分割，没有其它特殊字符，如spring-core
 
 ## packaging标签
-打包方式
 * pom：父级项目一定为pom，父级的pom文件只作项目的子模块的整合
 * jar：默认，所有java文件都进行编译形成.class文件，且按照原来的java文件层级结构放置，最终压缩为一个jar文件
 * war：web项目部署，主要用于tomcat包，依赖包都放置到WEB-INF/lib，java编译后的class放置到WEB-INF/classes
@@ -60,8 +59,9 @@
 你可以把dependencyManagement放到单独的专门用来管理依赖的pom中，然后在需要使用依赖的模块中通过import scope依赖，就可以引入dependencyManagement。
 
 
-#### spring-boot-starter-parent 和 spring-boot-dependencies 的区别
-一般情况下,企业都有自己的parent依赖包,然后所有的项目都必须继承对应的parent包,这时候,我们就可以通过spring-boot-dependencies使用springboot,使用这种方式记得指定maven编译版本.    *
+### spring-boot-starter-parent 和 spring-boot-dependencies 的区别
+一般情况下,企业都有自己的parent依赖包,然后所有的项目都必须继承对应的parent包,这时候,我们就可以通过spring-boot-dependencies使用springboot,使用这种方式记得指定maven编译版本.    
+
 **共同点：**
 * 这两种方式,我们在使用spring-boot-starter的时候都不需要指定版本
 
