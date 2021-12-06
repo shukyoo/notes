@@ -3,3 +3,6 @@
 * @Value("${property : default_value}"): 获取配置文件中的信息
 * @Value("#{obj.property? :default_value}")：获取对象的property属性值
 
+## @SpingBootTest
+使用@SpringBootTest后，Spring将加载所有被管理的bean，基本等同于启动了整个服务，此时便可以开始功能测试。    
+详见：[SpringBoot测试](https://github.com/shukyoo/notes/blob/master/java/Spring/SpringBoot%E6%B5%8B%E8%AF%95.md)
