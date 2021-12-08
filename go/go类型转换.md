@@ -1,3 +1,23 @@
+## string转int
+```
+int, err := strconv.Atoi(string)
+```
+
+## int转string
+```
+string := strconv.Itoa(int)
+```
+
+## string转int64
+```
+int64, err := strconv.ParseInt(string, 10, 64)
+```
+
+## int64转string
+```
+string := strconv.FormatInt(int64,10)
+```
+
 ## interface{}转string
 以下是redigo里的代码摘录：
 ([]unit8 to string?)
