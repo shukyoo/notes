@@ -22,3 +22,12 @@ private BaseDao baseDao;
 ```
 推荐使用：@Resource注解在字段上，且这个注解是属于J2EE的，减少了与spring的耦合，这样代码看起就比较优雅。
 
+## @Mapper和MapperScan
+* @Mapper 让mybatis的mapper接口导入spring容器中管理，每个Mapper类都要加此注解；
+* @MapperScan 在启动类中加此注解，指定要扫描的Mapper类的包的路径，也可以指定多个包；
+
+## @Service注解
+1. 声明当前service是一个bean，导入到spring容器管理
+2. @service引用了@component注解，也就是component注解实现的功能@service都能实现
+3. 被spring认定是业务逻辑层，里面有spring对业务逻辑层管理的一对逻辑
+4. 括号内指定别名
