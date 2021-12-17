@@ -31,3 +31,25 @@ private BaseDao baseDao;
 2. @service引用了@component注解，也就是component注解实现的功能@service都能实现
 3. 被spring认定是业务逻辑层，里面有spring对业务逻辑层管理的一对逻辑
 4. 括号内指定别名
+
+## @ResponseBody
+将controller的方法返回的对象，通过适当的转换器转换成指定的格式后，写入到response对象的body区（响应体中），通常用于返回json数据或者是xml，
+在使用此注解后不会再走视图处理器，而是直接将数据写入到输入流中，效果等同于通过response对象输出指定格式的数据；    
+例如：
+```
+ @RequestMapping("/login")
+ @ResponseBody
+ public User login(User user){
+ 	return user;
+ }
+```
+那么前台接收到的数据为:{"userName":"xxx","pwd":"xxx"}    
+
+效果等同于如下代码
+```java
+@RequestMapping("/login")
+public void login(User user,HttpServletResponse response){
+	//通过response对象输出指定格式的数据
+	response.getWritter.write(JSONObject.fromObject(user).toString());
+}
+```
