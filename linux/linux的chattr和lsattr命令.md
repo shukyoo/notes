@@ -42,6 +42,7 @@ mode	设置文件的隐藏属性，其格式为+-=[acdeijstuACDST]
 
 
 ## 隐藏属性说明
+| 属性 | 含义 |
 | --- | --- |
 | A | 文件的atime(access time)不可被修改，这样可以减少磁盘I/O数量，对于笔记本电脑有利于提高续航能力 |
 | S | 硬盘I/O同步选项，功能类似sync |
@@ -52,4 +53,3 @@ mode	设置文件的隐藏属性，其格式为+-=[acdeijstuACDST]
 | j | 即journal，使得当通过mount参数”data=ordered”或”data=writeback”挂载的文件系统，文件在写入时会先被记录(在journal中)。如果filesystem被设定参数为data=journal，则该参数自动失效 |
 | s | 即secure，保密选项。设置了s属性的文件在被删除时，其所有数据块会被写入0 |
 | u | 即undelete，反删除选项。与s相反，文件在被删除时，其所有的数据块都保留着，用户今后可以恢复该文件 |
-| --- | --- |
