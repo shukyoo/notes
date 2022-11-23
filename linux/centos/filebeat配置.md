@@ -47,7 +47,7 @@ output.kafka:
 #----------------------------- Logstash output --------------------------------
 #output.logstash:
 #  # The Logstash hosts
-#  hosts: ["10.97.200.230:5045"]
+#  hosts: ["10.0.0.1:5045"]
 ```
 
 ## 具体业务配置
