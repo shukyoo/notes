@@ -45,3 +45,62 @@ $capsule->bootEloquent();
         });
     }
 ```
+
+
+# 通过trait实现复用
+```php
+trait DataLogTrait
+{
+    public static function bootDataLogTrait()
+    {
+        static::observe(DataLogObserver::class);
+    }
+}
+```
+
+```php
+use Illuminate\Database\Eloquent\Model;
+
+class DataLogObserver
+{
+    protected static $old_data = [];
+
+    /**
+     * 获取更新前原数据
+     */
+    public function updating(Model $model)
+    {
+        self::$old_data = [];
+        $changes = $model->getDirty();
+        foreach ($changes as $k => $v) {
+            self::$old_data[$k] = $model->getOriginal($k);
+        }
+    }
+
+    /**
+     * 更新日志
+     */
+    public function updated(Model $model)
+    {
+        // ......
+    }
+
+    /**
+     * 删除日志
+     */
+    public function deleted(Model $model)
+    {
+        // ......
+    }
+}
+```
+
+模型里使用trait就可以
+```php
+class MyModel extends Model
+{
+    use DataLogTrait;
+}
+```
+
+
