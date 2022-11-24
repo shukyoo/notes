@@ -104,3 +104,5 @@ class MyModel extends Model
 ```
 
 
+## 参考
+* [laravel Eloquent 模型中通过 Trait 来添加监听器](https://learnku.com/articles/16656/trait-listeners-are-added-to-the-laravel-eloquent-model)
