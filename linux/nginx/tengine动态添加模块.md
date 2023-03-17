@@ -18,3 +18,23 @@ dso {
     load ngx_http_lua_module.so;
 }
 ```
+5. 测试
+```
+# 先添加一个lua脚本
+vim lua/hello.lua
+ngx.say("Hello World")
+
+# 再配置
+    server {
+        listen       80;
+        server_name  localhost;
+
+        location /lua {
+            access_by_lua_file '/usr/local/nginx/lua/hello.lua';
+        }
+    }
+    
+# 用curl请求
+curl 'http://localhost/lua'
+Hello World
+```
