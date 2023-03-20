@@ -1,5 +1,6 @@
 # 添加lua_module
-1. 先安装luajit
+1. 先安装luajit    
+
 1.1 通过yum安装
 ```
 # 安装
@@ -23,17 +24,17 @@ export LUAJIT_LIB=/usr/local/luajit/lib
 export LUAJIT_INC=/usr/local/luajit/include/luajit-2.0
 ```
 
-3. 使用dso_tool编译模块
+2. 使用dso_tool编译模块
 ```
 ./sbin/dso_tool --add-module=/path/tengine/modules/ngx_http_lua_module
 ```
-4. 配置文件加载模块
+3. 配置文件加载模块
 ```
 dso {
     load ngx_http_lua_module.so;
 }
 ```
-5. 测试
+4. 测试
 ```
 # 先添加一个lua脚本
 vim lua/hello.lua
