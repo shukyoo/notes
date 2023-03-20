@@ -1,13 +1,28 @@
 # 添加lua_module
-1. 先安装luajit-devel
+1. 先安装luajit
+1.1 通过yum安装
 ```
+# 安装
 sudo yum install -y luajit-devel
-```
-2. 添加环境变量
-```
+# 添加环境变量
 export LUAJIT_LIB=/usr/lib64
 export LUAJIT_INC=/usr/include/luajit-2.0
 ```
+
+1.2 通过编译安装
+```
+# 下载
+wget http://luajit.org/download/LuaJIT-2.0.5.tar.gz
+tar zxf LuaJIT-2.0.5.tar.gz
+cd LuaJIT-2.0.5
+# 编译
+make PREFIX=/usr/local/luajit
+make install PREFIX=/usr/local/luajit
+# 添加环境变量
+export LUAJIT_LIB=/usr/local/luajit/lib
+export LUAJIT_INC=/usr/local/luajit/include/luajit-2.0
+```
+
 3. 使用dso_tool编译模块
 ```
 ./sbin/dso_tool --add-module=/path/tengine/modules/ngx_http_lua_module
