@@ -65,3 +65,6 @@ lua_code_cache on;
 * 告诉 ngx_http_lua_module 模块在 /path/to/lua/scripts 目录中查找 Lua 脚本。
 * 启用 ngx_http_lua_module 模块的 Lua 脚本缓存功能，并使用名为 my_cache 的共享内存字典来存储缓存数据。
 * 如果 lua_code_cache 设置为 off，每次请求都会重新编译 Lua 脚本。如果设置为 on，则会将编译后的代码缓存到内存中，以提高性能。
+
+# 参考
+* [使用tengine作为基础，在nginx中加入lua模块](https://blog.csdn.net/qq_39853326/article/details/121947996)
