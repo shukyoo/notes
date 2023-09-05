@@ -144,5 +144,22 @@ LDFLAGS=-R/usr/local/ssl/lib ./configure --with-ssl
 在验证服务器证书时，找不到CA证书，如果正确设置了 cainfo 或 capath 参数且 CA 证书已经是 rootCA，依然出错，那么可能是证书生成的时候出错，再重新生成一个；如果 CA 证书由一个中间证书签发，rootCA 签发中间证书，那么如果服务器没有提供中间证书，在验证过程中，openssl 在形成完整的证书链也会报这个错误，所以 cat intermediate.crt >> domain.crt 将所有中间证书与rootCA证书捆绑在一起。
 
 
+# 补充
+CURL访问HTTPS，返回错误35 SSL connect error
+先尝试升级nss等
+```
+yum update nss nss-util nspr -y
+```
+升级不行的话：
+尝试用 curl -k1 https://xxx 能通
+增加：curl_setopt($ch, CURLOPT_SSLVERSION, 1);
+变成如下：
+```
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+curl_setopt($ch, CURLOPT_SSLVERSION, 1);
+```
+
 # 参考
 * [使用 curl 进行 ssl 认证](https://www.cnblogs.com/cposture/p/9029014.html)
+* [PHP使用CURL访问HTTPS，返回错误35 SSL connect error](https://blog.csdn.net/weixin_36441117/article/details/114684742)
